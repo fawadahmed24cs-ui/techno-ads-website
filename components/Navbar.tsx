@@ -1,32 +1,108 @@
+"use client";
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { SITE } from "@/lib/site";
+
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    { name: "Home", id: "home" },
+    { name: "Services", id: "services" },
+    { name: "Portfolio", id: "portfolio" },
+    { name: "Contact", id: "contact" },
+  ];
+
+  const scrollToSection = (id: string) => {
+    setMenuOpen(false);
+
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-yellow-600">
-      <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-yellow-500/10">
 
-        <h1 className="text-2xl font-bold text-yellow-500">
-          Techno Ads & Prints
-        </h1>
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        <ul className="hidden md:flex gap-10 text-white">
-          <li className="hover:text-yellow-500 cursor-pointer transition">
-            Home
-          </li>
-          <li className="hover:text-yellow-500 cursor-pointer transition">
-            Services
-          </li>
-          <li className="hover:text-yellow-500 cursor-pointer transition">
-            Portfolio
-          </li>
-          <li className="hover:text-yellow-500 cursor-pointer transition">
-            Contact
-          </li>
-        </ul>
+        {/* Logo */}
 
-        <button className="bg-yellow-500 text-black px-5 py-2 rounded-full font-semibold hover:bg-yellow-400 transition">
-          Get Quote
+        <button
+          onClick={() => scrollToSection("home")}
+          className="text-2xl font-bold text-yellow-500"
+        >
+          TECHNO ADS & PRINTS
+        </button>
+
+        {/* Desktop Menu */}
+
+        <nav className="hidden md:flex items-center gap-8">
+
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="text-gray-300 hover:text-yellow-500 transition"
+            >
+              {item.name}
+            </button>
+          ))}
+
+          <a
+            href={`https://wa.me/${SITE.whatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition"
+          >
+            WhatsApp
+          </a>
+
+        </nav>
+
+        {/* Mobile Menu Button */}
+
+        <button
+          className="md:hidden text-yellow-500"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
 
       </div>
-    </nav>
+
+      {/* Mobile Menu */}
+
+      {menuOpen && (
+        <div className="md:hidden bg-zinc-950 border-t border-yellow-500/20">
+
+          <div className="flex flex-col p-6 space-y-5">
+
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-left text-gray-300 hover:text-yellow-500 transition"
+              >
+                {item.name}
+              </button>
+            ))}
+
+            <a
+              href={`https://wa.me/${SITE.whatsappNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-500 text-center text-black py-3 rounded-full font-semibold"
+            >
+              WhatsApp Us
+            </a>
+
+          </div>
+
+        </div>
+      )}
+
+    </header>
   );
 }

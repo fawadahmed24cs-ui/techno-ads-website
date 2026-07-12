@@ -1,6 +1,20 @@
+"use client";
+
+import { SITE } from "@/lib/site";
+
 export default function Hero() {
+  const whatsappMessage = encodeURIComponent(
+    "Hi Techno Ads & Prints, I would like to get a quote for my printing requirement."
+  );
+
+  const scrollToPortfolio = () => {
+    document
+      .getElementById("portfolio")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="min-h-screen bg-black text-white pt-32">
+    <section id="home" className="min-h-screen bg-black text-white pt-32">
       <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Left Side */}
@@ -28,11 +42,19 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-5 mt-10">
 
-            <button className="bg-yellow-500 text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow-400 transition">
+            <a
+              href={`https://wa.me/${SITE.whatsappNumber}?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-500 text-black px-8 py-4 rounded-full font-semibold hover:bg-yellow-400 transition duration-300"
+            >
               Get Instant Quote
-            </button>
+            </a>
 
-            <button className="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition">
+            <button
+              onClick={scrollToPortfolio}
+              className="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition duration-300"
+            >
               View Portfolio
             </button>
 

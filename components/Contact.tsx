@@ -2,7 +2,7 @@ import { SITE } from "@/lib/site";
 
 export default function Contact() {
   return (
-    <section className="bg-black text-white py-24 px-6">
+    <section id="contact" className="bg-black text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-16">
