@@ -7,12 +7,6 @@ export default function Hero() {
     "Hi Techno Ads & Prints, I would like to get a quote for my printing requirement."
   );
 
-  const scrollToPortfolio = () => {
-    document
-      .getElementById("portfolio")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="home" className="min-h-screen bg-black text-white pt-32">
       <div className="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
@@ -51,12 +45,12 @@ export default function Hero() {
               Get Instant Quote
             </a>
 
-            <button
-              onClick={scrollToPortfolio}
+            <a
+              href="#portfolio"
               className="border border-yellow-500 text-yellow-500 px-8 py-4 rounded-full hover:bg-yellow-500 hover:text-black transition duration-300"
             >
               View Portfolio
-            </button>
+            </a>
 
           </div>
 
@@ -73,7 +67,7 @@ export default function Hero() {
 
             <div>
               <h2 className="text-4xl font-bold text-yellow-500">
-                5000+
+                10k+
               </h2>
               <p className="text-gray-400">
                 Projects
@@ -82,7 +76,7 @@ export default function Hero() {
 
             <div>
               <h2 className="text-4xl font-bold text-yellow-500">
-                1000+
+                5k+
               </h2>
               <p className="text-gray-400">
                 Happy Clients
@@ -94,7 +88,6 @@ export default function Hero() {
         </div>
 
         {/* Right Side */}
-
         <div className="flex justify-center">
 
           <div className="relative w-full max-w-lg h-[550px] rounded-3xl bg-gradient-to-br from-yellow-500 via-orange-500 to-yellow-700 p-[4px] shadow-2xl">

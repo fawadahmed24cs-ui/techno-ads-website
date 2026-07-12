@@ -1,7 +1,7 @@
 export const SITE = {
   companyName: "Techno Ads & Prints",
 
-  whatsappNumber: "9845423201",
+  whatsappNumber: "919845423201",
 
   phone: "+91 9845423201",
 
