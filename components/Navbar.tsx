@@ -27,7 +27,7 @@ export default function Navbar() {
           className="flex items-center gap-3"
         >
           <Image
-            src="/logo.jpeg"
+            src="/logo.jpg"
             alt="Techno Ads & Prints"
             width={55}
             height={55}

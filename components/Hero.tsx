@@ -96,7 +96,7 @@ export default function Hero() {
             <div className="bg-zinc-950 rounded-3xl h-full flex flex-col items-center justify-center text-center px-8">
 
               <Image
-                src="/logo.jpeg"
+                src="/logo.jpg"
                 alt="Techno Ads & Prints"
                 width={260}
                 height={260}
