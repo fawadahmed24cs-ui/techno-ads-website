@@ -9,6 +9,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 
 
+
 export default function Home() {
   return (
     <>
@@ -21,6 +22,7 @@ export default function Home() {
       <Contact />
       <FloatingWhatsApp />
       <Footer />
+      
       
     </>
   );

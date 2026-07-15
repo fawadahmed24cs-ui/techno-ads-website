@@ -29,13 +29,13 @@ export default function Navbar() {
           <Image
             src="/logo.jpeg"
             alt="Techno Ads & Prints"
-            width={50}
-            height={50}
-            className="rounded-full"
+            width={55}
+            height={55}
             priority
+            className="object-contain"
           />
 
-          <span className="text-xl md:text-2xl font-bold text-yellow-500">
+          <span className=" text-sm md:text-xl font-bold text-yellow-500">
             TECHNO ADS & PRINTS
           </span>
         </button>
@@ -46,7 +46,7 @@ export default function Navbar() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-gray-300 hover:text-yellow-500 transition"
+              className="text-gray-300 hover:text-yellow-500 transition duration-300"
             >
               {item.name}
             </button>

@@ -1,44 +1,52 @@
 "use client";
 
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 const portfolio = [
   {
-    title: "Luxury Business Cards",
+    title: "Acrylic Signage",
+    category: "Signage",
+    description:
+      "Premium acrylic signage for offices, showrooms and commercial spaces.",
+    image: "/portfolio/acrylic-sign.jpg",
+  },
+  {
+    title: "Banner Printing",
+    category: "Large Format",
+    description:
+      "High-quality banners for advertising, events and branding.",
+    image: "/portfolio/banner.jpg",
+  },
+  {
+    title: "Business Cards",
     category: "Corporate Branding",
     description:
-      "Premium matte, textured and gold foil business cards that leave a lasting impression.",
+      "Premium business cards with elegant finishes and modern designs.",
+    image: "/portfolio/business-card.jpg",
+  },
+  
+  {
+    title: "Store Signage",
+    category: "Outdoor Signage",
+    description:
+      "Eye-catching storefront signs that strengthen your brand identity.",
+    image: "/portfolio/store-signage.jpg",
   },
   {
     title: "Wedding Invitations",
-    category: "Premium Invitations",
+    category: "Invitations",
     description:
-      "Elegant invitation cards with premium finishes and custom designs.",
+      "Beautiful custom invitation cards for weddings and special occasions.",
+    image: "/portfolio/wedding-invitation.jpg",
   },
   {
-    title: "UV Flatbed Printing",
-    category: "UV Printing",
-    description:
-      "High-quality UV printing on acrylic, glass, MDF, wood and more.",
-  },
-  {
-    title: "Acrylic Sign Boards",
-    category: "Signage",
-    description:
-      "Modern acrylic signage for offices, retail stores and commercial spaces.",
-  },
-  {
-    title: "Corporate Brochures",
-    category: "Marketing",
-    description:
-      "Premium brochures, catalogues and company profiles for businesses.",
-  },
-  {
-    title: "Sunboard Printing",
-    category: "Large Format",
-    description:
-      "Indoor and outdoor sunboard printing for events and advertisements.",
-  },
+  title: "LED Sign Board",
+  category: "Outdoor Branding",
+  description:
+    "Premium illuminated LED sign boards for shops, offices and commercial spaces.",
+  image: "/portfolio/led-signage.jpg",
+},
 ];
 
 export default function Portfolio() {
@@ -55,22 +63,24 @@ Please share the pricing and more details.`
   };
 
   return (
-    <section id="portfolio" className="bg-black text-white py-24 px-6">
+    <section
+      id="portfolio"
+      className="bg-black text-white py-24 px-6"
+    >
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-16">
           <p className="uppercase tracking-[6px] text-yellow-500 text-sm font-semibold">
-            What We Print
+            Our Portfolio
           </p>
 
           <h2 className="text-4xl md:text-6xl font-bold mt-4">
-            Premium Printing Solutions
+            Our Recent Work
           </h2>
 
           <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
-            From premium business stationery to large-format branding, we
-            deliver high-quality printing solutions for businesses, events
-            and individuals across Bengaluru.
+            Explore some of our premium printing and branding projects
+            delivered with quality, precision and creativity.
           </p>
         </div>
 
@@ -79,29 +89,42 @@ Please share the pricing and more details.`
           {portfolio.map((item) => (
             <div
               key={item.title}
-              className="bg-zinc-950 border border-yellow-500/20 rounded-3xl p-8 hover:border-yellow-500 hover:-translate-y-2 transition-all duration-300"
+              className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-yellow-500 hover:-translate-y-2 transition-all duration-300 shadow-xl"
             >
 
-              <span className="inline-block bg-yellow-500/10 text-yellow-500 px-4 py-2 rounded-full text-sm font-semibold">
-                {item.category}
-              </span>
+              <div className="relative h-64 w-full overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover hover:scale-110 transition duration-500"
+                />
+              </div>
 
-              <h3 className="text-2xl font-bold mt-6">
-                {item.title}
-              </h3>
+              <div className="p-8">
 
-              <p className="text-gray-400 mt-4 leading-7">
-                {item.description}
-              </p>
+                <span className="inline-block bg-yellow-500/10 text-yellow-500 px-4 py-2 rounded-full text-sm font-semibold">
+                  {item.category}
+                </span>
 
-              <a
-                href={getWhatsAppLink(item.title)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 block w-full text-center bg-yellow-500 text-black py-3 rounded-full font-semibold hover:bg-yellow-400 transition duration-300"
-              >
-                Get Quote on WhatsApp
-              </a>
+                <h3 className="text-2xl font-bold mt-5">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-400 mt-4 leading-7">
+                  {item.description}
+                </p>
+
+                <a
+                  href={getWhatsAppLink(item.title)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 block w-full text-center bg-yellow-500 text-black py-3 rounded-full font-semibold hover:bg-yellow-400 transition duration-300"
+                >
+                  Get Quote on WhatsApp
+                </a>
+
+              </div>
 
             </div>
           ))}
