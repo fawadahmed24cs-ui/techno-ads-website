@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 export default function Navbar() {
@@ -23,9 +24,20 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => scrollToSection("home")}
-          className="text-xl md:text-2xl font-bold text-yellow-500"
+          className="flex items-center gap-3"
         >
-          TECHNO ADS & PRINTS
+          <Image
+            src="/logo.jpeg"
+            alt="Techno Ads & Prints"
+            width={50}
+            height={50}
+            className="rounded-full"
+            priority
+          />
+
+          <span className="text-xl md:text-2xl font-bold text-yellow-500">
+            TECHNO ADS & PRINTS
+          </span>
         </button>
 
         {/* Desktop Navigation */}

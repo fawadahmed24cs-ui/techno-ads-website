@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 export default function Hero() {
@@ -94,15 +95,16 @@ export default function Hero() {
 
             <div className="bg-zinc-950 rounded-3xl h-full flex flex-col items-center justify-center text-center px-8">
 
-              <h2 className="text-5xl font-extrabold text-yellow-500">
-                TECHNO
-              </h2>
+              <Image
+                src="/logo.jpeg"
+                alt="Techno Ads & Prints"
+                width={260}
+                height={260}
+                priority
+                className="mb-4"
+              />
 
-              <h3 className="text-4xl font-bold text-white mt-2">
-                ADS & PRINTS
-              </h3>
-
-              <p className="text-gray-400 mt-4">
+              <p className="text-gray-400 mt-2">
                 20+ Years of Excellence in Printing
               </p>
 
