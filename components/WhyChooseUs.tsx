@@ -39,13 +39,12 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-zinc-950 text-white py-24 px-6">
-
+    <section className="bg-zinc-950 text-white pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-16">
 
-          <p className="uppercase tracking-[6px] text-yellow-500 text-sm font-semibold">
+          <p className="uppercase tracking-[8px] text-yellow-500 text-lg font-bold">
             Why Choose Us
           </p>
 
@@ -63,12 +62,10 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {reasons.map((reason) => (
-
             <div
               key={reason.title}
               className="bg-black rounded-3xl border border-yellow-500/20 p-8 hover:border-yellow-500 hover:-translate-y-2 transition-all duration-300"
             >
-
               <div className="text-5xl mb-6">
                 {reason.icon}
               </div>
@@ -82,13 +79,11 @@ export default function WhyChooseUs() {
               </p>
 
             </div>
-
           ))}
 
         </div>
 
       </div>
-
     </section>
   );
 }

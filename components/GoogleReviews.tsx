@@ -2,12 +2,12 @@
 
 export default function GoogleReviews() {
   return (
-    <section className="bg-zinc-950 text-white py-24 px-6">
+    <section className="bg-zinc-950 text-white pt-12 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
         <div className="text-center mb-16">
-          <p className="uppercase tracking-[6px] text-yellow-500 text-sm font-semibold">
+          <p className="uppercase tracking-[8px] text-yellow-500 text-lg font-bold">
             Google Reviews
           </p>
 
@@ -16,8 +16,14 @@ export default function GoogleReviews() {
           </h2>
 
           <p className="text-gray-400 mt-6 max-w-3xl mx-auto">
-            We are proud to maintain a <span className="text-yellow-500 font-semibold">4.9★ Google Rating </span>
-            based on <span className="text-yellow-500 font-semibold">20 genuine customer reviews</span>.
+            We are proud to maintain a{" "}
+            <span className="text-yellow-500 font-semibold">
+              4.9★ Google Rating
+            </span>{" "}
+            based on{" "}
+            <span className="text-yellow-500 font-semibold">
+              20 genuine customer reviews
+            </span>.
           </p>
         </div>
 
@@ -37,7 +43,6 @@ export default function GoogleReviews() {
         {/* Reviews */}
         <div className="grid md:grid-cols-3 gap-8">
 
-          {/* Review 1 */}
           <div className="bg-black border border-zinc-800 rounded-3xl p-8 hover:border-yellow-500 transition">
             <div className="text-yellow-500 text-xl mb-4">
               ⭐⭐⭐⭐⭐
@@ -52,7 +57,6 @@ export default function GoogleReviews() {
             </h4>
           </div>
 
-          {/* Review 2 */}
           <div className="bg-black border border-zinc-800 rounded-3xl p-8 hover:border-yellow-500 transition">
             <div className="text-yellow-500 text-xl mb-4">
               ⭐⭐⭐⭐⭐
@@ -67,7 +71,6 @@ export default function GoogleReviews() {
             </h4>
           </div>
 
-          {/* Review 3 */}
           <div className="bg-black border border-zinc-800 rounded-3xl p-8 hover:border-yellow-500 transition">
             <div className="text-yellow-500 text-xl mb-4">
               ⭐⭐⭐⭐⭐
