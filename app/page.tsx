@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Footer from "@/components/Footer";
 
+import GoogleReviews from "@/components/GoogleReviews";
 
 
 export default function Home() {
@@ -18,10 +19,12 @@ export default function Home() {
       <Services />
       <Portfolio />
       <WhyChooseUs />
-      
+      <GoogleReviews />
       <Contact />
-      <FloatingWhatsApp />
+      
       <Footer />
+      <FloatingWhatsApp />
+      
       
       
     </>
